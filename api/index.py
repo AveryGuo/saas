@@ -11,7 +11,7 @@ def idea():
         api_key=os.getenv("OPENAI_API_KEY"),
         base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
     )
-    prompt = [{"role": "user", "content": "Come up with a new business idea for AI Agents"}]
+    prompt = [{"role": "user", "content": "Reply with a new business idea for AI Agents, formatted with headings, sub-headings and bullet points"}]
     stream = client.chat.completions.create(model="qwen3.5-plus", messages=prompt, stream=True)
 
     def event_stream():
